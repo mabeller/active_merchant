@@ -7,19 +7,10 @@ module ActiveMerchant #:nodoc:
         class Notification < ActiveMerchant::Billing::Integrations::Notification
           def complete?
             status == 'ready_to_ship'
-#TODObeller
           end
 
           def status
-            case params['event']
-#TODObeller pending state machine implementation
-            when 'invoice_created'
-              'unpaid'
-            when 'invoice_payment_acknowledged'
-              'paid'
-            when 'invoice_paid'
-              'ready_to_ship'
-            end
+            params['payload']['status']
           end
 
           # GoCoin Event ID

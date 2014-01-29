@@ -9,7 +9,6 @@ class GoCoinNotificationTest < Test::Unit::TestCase
 
   def test_accessors
     assert @go_coin.complete?
-#TODObeller
     assert_equal "ready_to_ship", @go_coin.status
     assert_equal "b9879d2b-052f-4a0a-8a3f-3e72049e4d19", @go_coin.transaction_id
     assert_equal "050b550a-1f4d-4c1e-a0b7-7d9a27e44c4a", @go_coin.item_id
@@ -55,7 +54,7 @@ class GoCoinNotificationTest < Test::Unit::TestCase
   def invoice_data
     {
       "id"=>"050b550a-1f4d-4c1e-a0b7-7d9a27e44c4a", 
-      "status"=>"paid", 
+      "status"=>"ready_to_ship", 
       "payment_address"=>"bitcoin_public_address", 
       "price"=>"0.00012350", 
       "price_currency"=>"BTC", 
@@ -72,7 +71,7 @@ class GoCoinNotificationTest < Test::Unit::TestCase
       "item_sku"=>nil, 
       "item_description"=>nil, 
       "physical"=>nil, 
-      "customer_name"=>"Matt Beller", 
+      "customer_name"=>"Customer Name", 
       "customer_address_1"=>nil, 
       "customer_address_2"=>nil, 
       "customer_city"=>nil, 
