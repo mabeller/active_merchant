@@ -7,6 +7,7 @@ module ActiveMerchant #:nodoc:
             @access_token = options[:authcode]
             @currency = options[:currency] || 'USD'
             @crypto_currency = options[:crypto_currency] || 'BTC'
+            @merchant_id = options[:account_name]
             super
           end
 
