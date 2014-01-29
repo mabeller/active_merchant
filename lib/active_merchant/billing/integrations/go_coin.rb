@@ -16,7 +16,7 @@ module ActiveMerchant #:nodoc:
         end
 
         def self.credential_based_url(options)
-          "https://gateway.gocoin.com/merchant/#{options[:merchant_id]}/invoices"
+          "https://gateway.gocoin.com/merchant/#{options[:account_name]}/invoices"
         end
 
         def self.notification(post, options = {})
